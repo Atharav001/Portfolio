@@ -273,44 +273,45 @@ function Hero() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "relative z-10 max-w-[1400px] mx-auto w-full",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h1, {
-                        initial: {
-                            opacity: 0,
-                            y: 50
-                        },
-                        animate: {
-                            opacity: 1,
-                            y: 0
-                        },
-                        transition: {
-                            type: "spring",
-                            stiffness: 50,
-                            damping: 20,
-                            delay: 0.2
-                        },
-                        className: "font-pixel text-orange text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-wider mb-6",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-14 flex flex-col items-start gap-4",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "glitch-hover inline-block",
-                                "data-text": "ATHARAV",
-                                children: "ATHARAV"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex",
+                                children: "ATHARAV".split("").map((char, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        style: {
+                                            color: "#FF5F00",
+                                            opacity: 0
+                                        },
+                                        className: `hero-char-${i} font-pixel text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block`,
+                                        children: char
+                                    }, i, false, {
+                                        fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
+                                        lineNumber: 22,
+                                        columnNumber: 15
+                                    }, this))
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                                lineNumber: 30,
+                                lineNumber: 20,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex",
+                                children: "NARANG".split("").map((char, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        style: {
+                                            color: "#FF5F00",
+                                            opacity: 0
+                                        },
+                                        className: `hero-char-${i + 8} font-pixel text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block`,
+                                        children: char
+                                    }, i + 8, false, {
+                                        fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
+                                        lineNumber: 33,
+                                        columnNumber: 15
+                                    }, this))
+                            }, void 0, false, {
                                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
                                 lineNumber: 31,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "glitch-hover inline-block",
-                                "data-text": "NARANG",
-                                children: "NARANG"
-                            }, void 0, false, {
-                                fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                                lineNumber: 32,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -332,32 +333,32 @@ function Hero() {
                             duration: 0.8,
                             delay: 0.4
                         },
-                        className: "flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4",
+                        className: "flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "font-pixel text-vanilla text-[clamp(0.7rem,2vw,1.6rem)] leading-normal",
                                 children: "Let's talk about"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                                lineNumber: 41,
+                                lineNumber: 50,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "font-pixel text-[clamp(0.7rem,2vw,1.6rem)]",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$src$2f$components$2f$ui$2f$Typewriter$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                     fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                                    lineNumber: 45,
+                                    lineNumber: 54,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                                lineNumber: 44,
+                                lineNumber: 53,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                        lineNumber: 35,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -375,7 +376,7 @@ function Hero() {
                         children: "Designer & developer crafting digital experiences that are thoughtful, functional, and beautiful."
                     }, void 0, false, {
                         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                        lineNumber: 49,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -407,7 +408,7 @@ function Hero() {
                                 children: "View Projects"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                                lineNumber: 64,
+                                lineNumber: 73,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].a, {
@@ -425,13 +426,13 @@ function Hero() {
                                 children: "Get in Touch"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                                lineNumber: 76,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                        lineNumber: 58,
+                        lineNumber: 67,
                         columnNumber: 9
                     }, this)
                 ]
@@ -457,12 +458,12 @@ function Hero() {
                     size: 24
                 }, void 0, false, {
                     fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                    lineNumber: 100,
+                    lineNumber: 109,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Hero.tsx",
-                lineNumber: 93,
+                lineNumber: 102,
                 columnNumber: 7
             }, this)
         ]
@@ -617,21 +618,21 @@ const containerVariants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.1
+            staggerChildren: 0.15
         }
     }
 };
 const itemVariants = {
     hidden: {
         opacity: 0,
-        y: 30
+        y: 40
     },
     visible: {
         opacity: 1,
         y: 0,
         transition: {
             type: "spring",
-            stiffness: 100,
+            stiffness: 70,
             damping: 20
         }
     }
@@ -1446,10 +1447,12 @@ __turbopack_context__.s([
     ()=>Projects
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/node_modules/next/image.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__ = __turbopack_context__.i("[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/node_modules/lucide-react/dist/esm/icons/arrow-up-right.js [app-ssr] (ecmascript) <export default as ArrowUpRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$src$2f$components$2f$ui$2f$TiltCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/ui/TiltCard.tsx [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -1507,16 +1510,18 @@ const itemVariants = {
     hidden: {
         opacity: 0,
         scale: 0.95,
-        y: 30
+        y: 40,
+        rotateX: -5
     },
     visible: {
         opacity: 1,
         scale: 1,
         y: 0,
+        rotateX: 0,
         transition: {
             type: "spring",
-            stiffness: 100,
-            damping: 20
+            stiffness: 80,
+            damping: 25
         }
     }
 };
@@ -1531,13 +1536,15 @@ function ProjectImage({ project }) {
             damping: 20
         },
         className: "w-full aspect-[16/10] bg-[#2a2a2a] rounded-xl flex items-center justify-center overflow-hidden border border-vanilla/10",
-        children: project.image ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+        children: project.image ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
             src: project.image,
             alt: project.title,
+            width: 800,
+            height: 500,
             className: "w-full h-full object-cover"
         }, void 0, false, {
             fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-            lineNumber: 78,
+            lineNumber: 80,
             columnNumber: 9
         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "w-full h-full bg-gradient-to-tr from-orange/10 to-transparent flex items-center justify-center",
@@ -1546,17 +1553,17 @@ function ProjectImage({ project }) {
                 children: "Project Preview"
             }, void 0, false, {
                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                lineNumber: 85,
+                lineNumber: 89,
                 columnNumber: 11
             }, this)
         }, void 0, false, {
             fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-            lineNumber: 84,
+            lineNumber: 88,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-        lineNumber: 72,
+        lineNumber: 74,
         columnNumber: 5
     }, this);
 }
@@ -1589,7 +1596,7 @@ function Projects() {
                             children: "04"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                            lineNumber: 103,
+                            lineNumber: 107,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1601,19 +1608,19 @@ function Projects() {
                                     children: "Projects"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                    lineNumber: 105,
+                                    lineNumber: 109,
                                     columnNumber: 22
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                            lineNumber: 104,
+                            lineNumber: 108,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                    lineNumber: 96,
+                    lineNumber: 100,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -1634,7 +1641,7 @@ function Projects() {
                     children: "A selection of recent work spanning product design, research, and systems thinking."
                 }, void 0, false, {
                     fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                    lineNumber: 109,
+                    lineNumber: 113,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1658,7 +1665,7 @@ function Projects() {
                                         project: project
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                        lineNumber: 136,
+                                        lineNumber: 140,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1685,7 +1692,7 @@ function Projects() {
                                                                         children: project.number
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                                                        lineNumber: 146,
+                                                                        lineNumber: 150,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1693,13 +1700,13 @@ function Projects() {
                                                                         children: project.title
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                                                        lineNumber: 147,
+                                                                        lineNumber: 151,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                                                lineNumber: 145,
+                                                                lineNumber: 149,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1712,18 +1719,18 @@ function Projects() {
                                                                     className: "text-muted group-hover:text-orange transition-colors shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                                                    lineNumber: 154,
+                                                                    lineNumber: 158,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                                                lineNumber: 151,
+                                                                lineNumber: 155,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                                        lineNumber: 144,
+                                                        lineNumber: 148,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1731,7 +1738,7 @@ function Projects() {
                                                         children: project.category
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                                        lineNumber: 160,
+                                                        lineNumber: 164,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1739,13 +1746,13 @@ function Projects() {
                                                         children: project.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                                        lineNumber: 161,
+                                                        lineNumber: 165,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                                lineNumber: 140,
+                                                lineNumber: 144,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$Manipal__CLG$2f$Project$2f$Antigravity$2f$Portfolio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1759,45 +1766,45 @@ function Projects() {
                                                         children: tag
                                                     }, tag, false, {
                                                         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                                        lineNumber: 167,
+                                                        lineNumber: 171,
                                                         columnNumber: 23
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                                lineNumber: 165,
+                                                lineNumber: 169,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                        lineNumber: 139,
+                                        lineNumber: 143,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                                lineNumber: 128,
+                                lineNumber: 132,
                                 columnNumber: 15
                             }, this)
                         }, project.number, false, {
                             fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                            lineNumber: 127,
+                            lineNumber: 131,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-                    lineNumber: 119,
+                    lineNumber: 123,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-            lineNumber: 95,
+            lineNumber: 99,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/Manipal CLG/Project/Antigravity/Portfolio/src/components/sections/Projects.tsx",
-        lineNumber: 94,
+        lineNumber: 98,
         columnNumber: 5
     }, this);
 }
