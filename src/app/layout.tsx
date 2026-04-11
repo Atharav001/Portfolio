@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Press_Start_2P } from "next/font/google";
 import "./globals.css";
-import { GoogleAnalytics } from '@next/third-parties/google';
+// import { GoogleAnalytics } from '@next/third-parties/google';
 import ClientLayout from "@/components/layout/ClientLayout";
 
 const inter = Inter({
@@ -32,7 +32,7 @@ export default function RootLayout({
         <ClientLayout>
           {children}
         </ClientLayout>
-        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+        {/* <GoogleAnalytics gaId="G-XXXXXXXXXX" /> */}
       </body>
     </html>
   );
