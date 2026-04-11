@@ -4,18 +4,20 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function CinematicIntro({ onComplete }: { onComplete: () => void }) {
-  const [phase, setPhase] = useState(1); // 1: Reveal, 2: Morph/Landing
+  const [phase, setPhase] = useState(1); // 1: Reveal, 2: Traveling/Morphing
 
   useEffect(() => {
-    // Phase 1: Reveal
-    const timer = setTimeout(() => {
+    // Phase 1: Reveal Duration (Wait for reveal to finish)
+    const revealTimer = setTimeout(() => {
       setPhase(2);
-      // Give time for the morph animation to play before removing intro completely
-      setTimeout(onComplete, 1600);
-    }, 2000);
+      // Let the Traveling animation play out before unmounting
+      setTimeout(onComplete, 2000);
+    }, 2800);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(revealTimer);
   }, [onComplete]);
+
+  const brandOrange = "#FE5102";
 
   return (
     <motion.div
@@ -25,7 +27,7 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: phase === 1 ? 1 : 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
         className="absolute inset-0 bg-black z-0 pointer-events-auto"
       />
 
@@ -33,37 +35,49 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
       <motion.div
         initial={{ y: "0%" }}
         animate={{ y: phase === 2 ? "-100%" : "0%" }}
-        transition={{ duration: 1, ease: [0.83, 0, 0.17, 1], delay: 0.1 }}
-        className="absolute inset-x-0 top-0 h-1/2 bg-black z-10 pointer-events-auto"
+        transition={{ duration: 1.5, ease: [0.85, 0, 0.15, 1], delay: 0.2 }}
+        className="absolute inset-x-0 top-0 h-1/2 bg-black z-10 pointer-events-auto border-b border-orange/10"
       />
       <motion.div
         initial={{ y: "0%" }}
         animate={{ y: phase === 2 ? "100%" : "0%" }}
-        transition={{ duration: 1, ease: [0.83, 0, 0.17, 1], delay: 0.1 }}
-        className="absolute inset-x-0 bottom-0 h-1/2 bg-black z-10 pointer-events-auto"
+        transition={{ duration: 1.5, ease: [0.85, 0, 0.15, 1], delay: 0.2 }}
+        className="absolute inset-x-0 bottom-0 h-1/2 bg-black z-10 pointer-events-auto border-t border-orange/10"
       />
 
-      {/* The Name (Single Line in Intro) */}
-      <div className="relative z-20">
+      {/* The Name (Single Line in Intro, Center-aligned Reveal) */}
+      <div className="relative z-20 overflow-hidden py-4">
         <motion.div
-          initial={{ clipPath: "inset(0% 100% 0% 0%)" }}
-          animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
-          transition={{ duration: 1.2, ease: [0.77, 0, 0.17, 1], delay: 0.4 }}
-          className="flex gap-[0.5em]"
+          initial={{ y: "110%" }}
+          animate={{ y: "0%" }}
+          transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.6 }}
+          className="flex gap-[0.8em]"
         >
           <motion.span
             layoutId="brand-first"
-            className="font-heading font-black text-white text-[clamp(2rem,6vw,6rem)] leading-none tracking-tighter uppercase"
+            transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
+            style={{ color: brandOrange }}
+            className="font-heading font-black text-[clamp(2.5rem,6vw,6.5rem)] leading-none tracking-tighter uppercase italic"
           >
             Atharav
           </motion.span>
           <motion.span
             layoutId="brand-last"
-            className="font-heading font-black text-orange text-[clamp(2rem,6vw,6rem)] leading-none tracking-tighter uppercase"
+            transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
+            style={{ color: brandOrange }}
+            className="font-heading font-black text-[clamp(2.5rem,6vw,6.5rem)] leading-none tracking-tighter uppercase italic"
           >
             Narang
           </motion.span>
         </motion.div>
+        
+        {/* Horizontal Line Reveal Mask (The "Center Line") */}
+        <motion.div 
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: phase === 1 ? 1 : 0 }}
+          transition={{ duration: 0.8, ease: "circInOut", delay: 0.3 }}
+          className="absolute bottom-0 left-0 w-full h-[2px] bg-orange/40 z-30"
+        />
       </div>
     </motion.div>
   );

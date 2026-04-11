@@ -16,10 +16,10 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-[1400px] mx-auto w-full">
-        <div className="mb-10 flex flex-col items-start">
+        <div className="mb-10 flex flex-col items-start gap-2">
           <motion.span
             layoutId="brand-first"
-            className="font-pixel text-white text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-wider uppercase mb-2 block"
+            className="font-pixel text-orange text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-wider uppercase block"
           >
             ATHARAV
           </motion.span>
