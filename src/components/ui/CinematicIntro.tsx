@@ -58,7 +58,7 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
           });
         }
       });
-    }, 1800);
+    }, 1500);
 
     return () => clearTimeout(flightTimer);
   }, [onComplete]);
