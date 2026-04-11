@@ -10,8 +10,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   const [removeIntro, setRemoveIntro] = useState(false);
 
   useEffect(() => {
-    // Show content (Hero section) just before the curtain splits to ensure smooth animation
-    const contentTimer = setTimeout(() => setShowContent(true), 2400);
+    // Show content (Hero section) early so magnets/parts have a destination to fly to
+    const contentTimer = setTimeout(() => setShowContent(true), 1200);
     return () => clearTimeout(contentTimer);
   }, []);
 
@@ -25,7 +25,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: showContent ? 1 : 0 }}
-        transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {children}
       </motion.div>
