@@ -16,12 +16,20 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-[1400px] mx-auto w-full">
-        <motion.h1
-          layoutId="brand-name"
-          className="font-pixel text-orange text-[clamp(1.5rem,5vw,5rem)] leading-none tracking-wider mb-8 uppercase whitespace-nowrap"
-        >
-          Atharav Narang
-        </motion.h1>
+        <div className="mb-10 flex flex-col items-start">
+          <motion.span
+            layoutId="brand-first"
+            className="font-pixel text-white text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-wider uppercase mb-2 block"
+          >
+            ATHARAV
+          </motion.span>
+          <motion.span
+            layoutId="brand-last"
+            className="font-pixel text-orange text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-wider uppercase block"
+          >
+            NARANG
+          </motion.span>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, x: -30 }}

@@ -10,8 +10,8 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
     // Phase 1: Reveal
     const timer = setTimeout(() => {
       setPhase(2);
-      // Give time for the morph animation to play before removing intro
-      setTimeout(onComplete, 1500);
+      // Give time for the morph animation to play before removing intro completely
+      setTimeout(onComplete, 1600);
     }, 2000);
 
     return () => clearTimeout(timer);
@@ -21,7 +21,7 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
     <motion.div
       className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden pointer-events-none"
     >
-      {/* Center Reveal Overlay */}
+      {/* Background Overlay */}
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: phase === 1 ? 1 : 0 }}
@@ -29,33 +29,40 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
         className="absolute inset-0 bg-black z-0 pointer-events-auto"
       />
 
-      {/* The Curtain (Left & Right Split) */}
+      {/* Vertical Split Curtain Reveal */}
       <motion.div
-        initial={{ x: "0%" }}
-        animate={{ x: phase === 2 ? "-100%" : "0%" }}
-        transition={{ duration: 1.2, ease: [0.83, 0, 0.17, 1], delay: 0.1 }}
-        className="absolute inset-y-0 left-0 w-1/2 bg-black z-10 pointer-events-auto"
+        initial={{ y: "0%" }}
+        animate={{ y: phase === 2 ? "-100%" : "0%" }}
+        transition={{ duration: 1, ease: [0.83, 0, 0.17, 1], delay: 0.1 }}
+        className="absolute inset-x-0 top-0 h-1/2 bg-black z-10 pointer-events-auto"
       />
       <motion.div
-        initial={{ x: "0%" }}
-        animate={{ x: phase === 2 ? "100%" : "0%" }}
-        transition={{ duration: 1.2, ease: [0.83, 0, 0.17, 1], delay: 0.1 }}
-        className="absolute inset-y-0 right-0 w-1/2 bg-black z-10 pointer-events-auto"
+        initial={{ y: "0%" }}
+        animate={{ y: phase === 2 ? "100%" : "0%" }}
+        transition={{ duration: 1, ease: [0.83, 0, 0.17, 1], delay: 0.1 }}
+        className="absolute inset-x-0 bottom-0 h-1/2 bg-black z-10 pointer-events-auto"
       />
 
-      {/* The Name (Phase 1: Center, Phase 2: Morph into Hero) */}
+      {/* The Name (Single Line in Intro) */}
       <div className="relative z-20">
         <motion.div
           initial={{ clipPath: "inset(0% 100% 0% 0%)" }}
           animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
-          transition={{ duration: 1, ease: [0.77, 0, 0.175, 1], delay: 0.5 }}
+          transition={{ duration: 1.2, ease: [0.77, 0, 0.17, 1], delay: 0.4 }}
+          className="flex gap-[0.5em]"
         >
-          <motion.h1
-            layoutId="brand-name"
-            className="font-heading font-black text-orange text-[clamp(2rem,6vw,6.5rem)] leading-none tracking-tighter whitespace-nowrap uppercase italic px-4"
+          <motion.span
+            layoutId="brand-first"
+            className="font-heading font-black text-white text-[clamp(2rem,6vw,6rem)] leading-none tracking-tighter uppercase"
           >
-            Atharav Narang
-          </motion.h1>
+            Atharav
+          </motion.span>
+          <motion.span
+            layoutId="brand-last"
+            className="font-heading font-black text-orange text-[clamp(2rem,6vw,6rem)] leading-none tracking-tighter uppercase"
+          >
+            Narang
+          </motion.span>
         </motion.div>
       </div>
     </motion.div>
