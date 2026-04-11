@@ -55,11 +55,12 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, scale: 0.95, y: 40, rotateX: -5 },
+  hidden: { opacity: 0, scale: 0.9, y: 50, filter: "blur(10px)", rotateX: -10 },
   visible: {
     opacity: 1,
     scale: 1,
     y: 0,
+    filter: "blur(0px)",
     rotateX: 0,
     transition: {
       type: "spring",
