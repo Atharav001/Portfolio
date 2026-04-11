@@ -43,10 +43,10 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
               targetEl.style.opacity = "1";
               char.style.opacity = "0";
 
-              // Metallic Flash Spark
+              // Refined Spark Effect (Peripheral Bloom)
               gsap.fromTo(targetEl, 
-                { color: "#FFFFFF", scale: 1.05 }, 
-                { color: "#FF5F00", scale: 1, duration: 0.3, ease: "power2.out" }
+                { textShadow: "0 0 20px rgba(255,255,255,1), 0 0 10px rgba(255,255,255,0.8)", scale: 1.05 }, 
+                { textShadow: "0 0 0px rgba(255,255,255,0), 0 0 0px rgba(255,255,255,0)", scale: 1, duration: 0.4, ease: "power2.out" }
               );
 
               // If it's the last character to finish, call onComplete
@@ -105,7 +105,7 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
               <span
                 key={i}
                 style={{ color: brandOrange, display: "inline-block" }}
-                className={`intro-char font-heading font-black text-[clamp(2.5rem,7vw,7rem)] leading-none tracking-tighter uppercase ${char === " " ? "w-[1rem]" : ""}`}
+                className={`intro-char font-heading font-black text-[clamp(2.5rem,7vw,7rem)] leading-none tracking-tighter uppercase ${char === " " ? "w-[4rem]" : ""}`}
               >
                 {char}
               </span>
