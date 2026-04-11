@@ -7,11 +7,11 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
   const [phase, setPhase] = useState(1); // 1: Reveal, 2: Traveling/Split
 
   useEffect(() => {
-    // Phase 1: Reveal Duration
+    // Phase 1: Reveal Duration (Wait for reveal to finish)
     const revealTimer = setTimeout(() => {
       setPhase(2);
       // Let the Traveling animation play out before unmounting
-      setTimeout(onComplete, 2500);
+      setTimeout(onComplete, 2000);
     }, 2500);
 
     return () => clearTimeout(revealTimer);
@@ -35,29 +35,29 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
       <motion.div
         initial={{ y: "0%" }}
         animate={{ y: phase === 2 ? "-100%" : "0%" }}
-        transition={{ duration: 1.8, ease: [0.85, 0, 0.15, 1], delay: 0.1 }}
+        transition={{ duration: 1.5, ease: [0.85, 0, 0.15, 1], delay: 0.1 }}
         className="absolute inset-x-0 top-0 h-1/2 bg-black z-10 pointer-events-auto"
       />
       <motion.div
         initial={{ y: "0%" }}
         animate={{ y: phase === 2 ? "100%" : "0%" }}
-        transition={{ duration: 1.8, ease: [0.85, 0, 0.15, 1], delay: 0.1 }}
+        transition={{ duration: 1.5, ease: [0.85, 0, 0.15, 1], delay: 0.1 }}
         className="absolute inset-x-0 bottom-0 h-1/2 bg-black z-10 pointer-events-auto"
       />
 
-      {/* The Name (Single Line in Intro, Center-aligned Reveal) */}
-      <div className="relative z-20 overflow-visible px-10">
+      {/* The Name (MASKED reveal, Center-aligned) */}
+      <div className="relative z-20 overflow-hidden px-10">
         <motion.div
-          initial={{ y: "150%" }}
+          initial={{ y: "100%" }}
           animate={{ y: "0%" }}
-          transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 0.5 }}
-          className="flex gap-[2.5em] items-baseline"
+          transition={{ duration: 1.5, ease: [0.85, 0, 0.15, 1], delay: 0.5 }}
+          className="flex gap-[2.5em] py-2"
         >
           <motion.span
             layoutId="brand-first"
             transition={{ duration: 1.8, ease: [0.76, 0, 0.24, 1] }}
             style={{ color: brandOrange }}
-            className="font-heading font-black text-[clamp(2rem,6vw,6.5rem)] leading-none tracking-tighter uppercase"
+            className="font-heading font-black text-[clamp(2.5rem,6vw,6.5rem)] leading-none tracking-tighter uppercase"
           >
             Atharav
           </motion.span>
@@ -65,7 +65,7 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
             layoutId="brand-last"
             transition={{ duration: 1.8, ease: [0.76, 0, 0.24, 1] }}
             style={{ color: brandOrange }}
-            className="font-heading font-black text-[clamp(2rem,6vw,6.5rem)] leading-none tracking-tighter uppercase"
+            className="font-heading font-black text-[clamp(2.5rem,6vw,6.5rem)] leading-none tracking-tighter uppercase"
           >
             Narang
           </motion.span>
