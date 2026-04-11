@@ -1,86 +1,114 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import gsap from "gsap";
 
 export default function CinematicIntro({ onComplete }: { onComplete: () => void }) {
-  const [phase, setPhase] = useState(1); // 1: Reveal, 2: Traveling/Split, 3: Finished
+  const [phase, setPhase] = useState(1);
 
   useEffect(() => {
-    // Phase 1 -> 2: Start the Split and Flight
-    const startSplitTimer = setTimeout(() => {
+    // Once the name reveals, trigger the GSAP Iron Man flight
+    const flightTimer = setTimeout(() => {
       setPhase(2);
+
+      const chars = document.querySelectorAll(".intro-char") as NodeListOf<HTMLElement>;
+      const middleIndex = Math.floor(chars.length / 2);
+
+      chars.forEach((char, i) => {
+        // Skip spaces if any, though we render them as empty spans
+        if (!char.textContent?.trim()) return;
+
+        const targetEl = document.querySelector(`.hero-char-${i}`) as HTMLElement;
+        
+        if (targetEl) {
+          // Calculate precise coordinates
+          const charRect = char.getBoundingClientRect();
+          const targetRect = targetEl.getBoundingClientRect();
+
+          const deltaX = targetRect.left - charRect.left;
+          // Font bounding boxes differ, so we align centers to be perfectly safe
+          const deltaY = (targetRect.top + targetRect.height / 2) - (charRect.top + charRect.height / 2);
+
+          const delay = Math.abs(i - middleIndex) * 0.05;
+
+          gsap.to(char, {
+            x: deltaX,
+            y: deltaY,
+            rotationX: 360,
+            duration: 1,
+            ease: "back.out(1.7)",
+            delay: delay,
+            onComplete: () => {
+              // The "State Change" - switch to Pixel Font visually
+              char.classList.add("font-pixel", "tracking-tight");
+              char.classList.remove("font-heading", "tracking-tighter");
+              
+              // To make it seamless, we reveal the real Hero letter and hide the flying one
+              targetEl.style.opacity = "1";
+              char.style.opacity = "0";
+
+              // If it's the last character to finish, call onComplete
+              if (i === chars.length - 1 || i === 0) {
+                // Buffer to assure all animations wrap up and curtains slide away
+                setTimeout(onComplete, 800);
+              }
+            }
+          });
+        }
+      });
     }, 1800);
 
-    // Phase 2 -> 3: Component is completely clear of the screen
-    const finishTimer = setTimeout(() => {
-      setPhase(3);
-      onComplete(); // Only unmount after curtains have clearly left the screen
-    }, 3200);
-
-    return () => {
-      clearTimeout(startSplitTimer);
-      clearTimeout(finishTimer);
-    };
+    return () => clearTimeout(flightTimer);
   }, [onComplete]);
 
   const brandOrange = "#FF5F00";
   const name = "ATHARAV NARANG";
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden pointer-events-none">
-      {/* Background Dimmer (Fades out during split) */}
+    <div className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none">
+      {/* Background Screen */}
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: phase >= 2 ? 0 : 1 }}
-        transition={{ duration: 1 }}
-        className="absolute inset-0 bg-black z-0 pointer-events-auto"
+        transition={{ duration: 0.8 }}
+        className="absolute inset-0 bg-black z-0"
       />
 
-      {/* HORIZONTAL CURTAINS (The Split) */}
-      {/* These stay until phase 3 to ensure the animation is visible */}
+      {/* Horizontal Curtains (Boutique Slide) */}
       <motion.div
         initial={{ x: "0%" }}
         animate={{ x: phase >= 2 ? "-100%" : "0%" }}
-        transition={{ duration: 1.4, ease: [0.8, 0, 0.1, 1], delay: 0.1 }}
-        className="absolute inset-y-0 left-0 w-1/2 bg-black z-[100] pointer-events-auto border-r border-[#FF5F00]/20 shadow-[10px_0_30px_rgba(0,0,0,0.5)]"
+        transition={{ duration: 1.2, ease: "expo.inOut" }}
+        className="absolute inset-y-0 left-0 w-1/2 bg-black z-10 border-r border-[#FF5F00]/20"
       />
       <motion.div
         initial={{ x: "0%" }}
         animate={{ x: phase >= 2 ? "100%" : "0%" }}
-        transition={{ duration: 1.4, ease: [0.8, 0, 0.1, 1], delay: 0.1 }}
-        className="absolute inset-y-0 right-0 w-1/2 bg-black z-[100] pointer-events-auto border-l border-[#FF5F00]/20 shadow-[-10px_0_30px_rgba(0,0,0,0.5)]"
+        transition={{ duration: 1.2, ease: "expo.inOut" }}
+        className="absolute inset-y-0 right-0 w-1/2 bg-black z-10 border-l border-[#FF5F00]/20"
       />
 
-      {/* THE NAMES (Independent Reveal & Magnet Flight) */}
-      <div className="relative z-[150] overflow-hidden px-12 py-4 h-[12rem] flex items-center justify-center">
-        <AnimatePresence>
-          {phase === 1 && (
-            <motion.div
-              key="intro-name-container"
-              className="flex items-center justify-center"
-              initial={{ y: "150%" }}
-              animate={{ y: "0%" }}
-              exit={{ opacity: 1 }} // Keep visible during flight
-              transition={{ duration: 1, ease: [0.77, 0, 0.175, 1], delay: 0.3 }}
-            >
-              {name.split("").map((char, i) => (
-                <motion.span
-                  key={i}
-                  layoutId={`brand-char-${i}`}
-                  transition={{ 
-                    duration: 1.6, 
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  style={{ color: brandOrange }}
-                  className="inline-block font-heading font-black text-[clamp(2.5rem,7vw,7rem)] leading-none tracking-tighter uppercase whitespace-pre"
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+      {/* Flying Letters Container */}
+      <div className="relative z-[150] overflow-visible px-12 h-[12rem] flex items-center justify-center">
+        {phase <= 2 && (
+          <motion.div
+            className="flex items-center justify-center"
+            initial={{ y: "150%" }}
+            animate={{ y: "0%" }}
+            transition={{ duration: 1, ease: [0.77, 0, 0.175, 1], delay: 0.3 }}
+          >
+            {name.split("").map((char, i) => (
+              <span
+                key={i}
+                style={{ color: brandOrange, display: "inline-block" }}
+                className={`intro-char font-heading font-black text-[clamp(2.5rem,7vw,7rem)] leading-none tracking-tighter uppercase ${char === " " ? "w-[1rem]" : ""}`}
+              >
+                {char}
+              </span>
+            ))}
+          </motion.div>
+        )}
       </div>
     </div>
   );

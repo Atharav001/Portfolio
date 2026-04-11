@@ -19,26 +19,24 @@ export default function Hero() {
         <div className="mb-14 flex flex-col items-start gap-4">
           <div className="flex">
             {"ATHARAV".split("").map((char, i) => (
-              <motion.span
+              <span
                 key={i}
-                layoutId={`brand-char-${i}`}
-                style={{ color: "#FF5F00" }}
-                className="font-pixel text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block"
+                style={{ color: "#FF5F00", opacity: 0 }}
+                className={`hero-char-${i} font-pixel text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block`}
               >
                 {char}
-              </motion.span>
+              </span>
             ))}
           </div>
           <div className="flex">
             {"NARANG".split("").map((char, i) => (
-              <motion.span
+              <span
                 key={i + 8}
-                layoutId={`brand-char-${i + 8}`}
-                style={{ color: "#FF5F00" }}
-                className="font-pixel text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block"
+                style={{ color: "#FF5F00", opacity: 0 }}
+                className={`hero-char-${i + 8} font-pixel text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block`}
               >
                 {char}
-              </motion.span>
+              </span>
             ))}
           </div>
         </div>
