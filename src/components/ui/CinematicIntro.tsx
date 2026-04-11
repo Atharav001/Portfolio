@@ -7,12 +7,12 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
   const [phase, setPhase] = useState(1); // 1: Reveal, 2: Traveling
 
   useEffect(() => {
-    // Phase 1: Reveal is fast
+    // Phase 1: Reveal is snap-fast
     const revealTimer = setTimeout(() => {
       setPhase(2);
-      // Immediately tell the layout to start the "suit-up", but keep curtain for a bit
-      setTimeout(onComplete, 1200); 
-    }, 1500);
+      // Quickly hand off the layout to the home page
+      setTimeout(onComplete, 800); 
+    }, 1000);
 
     return () => clearTimeout(revealTimer);
   }, [onComplete]);
@@ -25,21 +25,21 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: phase === 1 ? 1 : 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.4 }}
         className="absolute inset-0 bg-black z-0 pointer-events-auto"
       />
 
-      {/* Vertical Split Curtain (Slide Away) */}
+      {/* Vertical Split Curtain (High-speed Slide Away) */}
       <motion.div
         initial={{ y: "0%" }}
         animate={{ y: phase === 2 ? "-100%" : "0%" }}
-        transition={{ duration: 1, ease: [0.8, 0, 0.1, 1], delay: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.85, 0, 0.15, 1], delay: 0.05 }}
         className="absolute inset-x-0 top-0 h-1/2 bg-black z-10"
       />
       <motion.div
         initial={{ y: "0%" }}
         animate={{ y: phase === 2 ? "100%" : "0%" }}
-        transition={{ duration: 1, ease: [0.8, 0, 0.1, 1], delay: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.85, 0, 0.15, 1], delay: 0.05 }}
         className="absolute inset-x-0 bottom-0 h-1/2 bg-black z-10"
       />
 
@@ -51,7 +51,7 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
             initial={{ y: "100%" }}
             animate={{ y: "0%" }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "circOut" }}
+            transition={{ duration: 0.6, ease: "circOut" }}
             className="flex gap-[3rem] items-baseline"
           >
             <motion.span

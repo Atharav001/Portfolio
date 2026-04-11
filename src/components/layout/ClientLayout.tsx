@@ -10,8 +10,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   const [removeIntro, setRemoveIntro] = useState(false);
 
   useEffect(() => {
-    // Show the destination (Hero) just as the intro is about to hand off the layout
-    const contentTimer = setTimeout(() => setShowContent(true), 1300);
+    // Show the destination (Hero) even earlier to match the high-speed intro
+    const contentTimer = setTimeout(() => setShowContent(true), 800);
     return () => clearTimeout(contentTimer);
   }, []);
 
@@ -28,7 +28,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: showContent ? 1 : 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.6 }}
       >
         {children}
       </motion.div>
