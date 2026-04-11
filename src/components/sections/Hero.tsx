@@ -22,7 +22,8 @@ export default function Hero() {
               <motion.span
                 key={i}
                 layoutId={`brand-char-${i}`}
-                className="font-pixel text-orange text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block"
+                style={{ color: "#FF5F00" }}
+                className="font-pixel text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block"
               >
                 {char}
               </motion.span>
@@ -33,7 +34,8 @@ export default function Hero() {
               <motion.span
                 key={i + 8}
                 layoutId={`brand-char-${i + 8}`}
-                className="font-pixel text-orange text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block"
+                style={{ color: "#FF5F00" }}
+                className="font-pixel text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block"
               >
                 {char}
               </motion.span>
