@@ -4,72 +4,73 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function CinematicIntro({ onComplete }: { onComplete: () => void }) {
-  const [phase, setPhase] = useState(1); // 1: Reveal, 2: Traveling
+  const [phase, setPhase] = useState(1); // 1: Reveal, 2: Suit-up
 
   useEffect(() => {
-    // Phase 1: Reveal is snap-fast
     const revealTimer = setTimeout(() => {
       setPhase(2);
-      // Quickly hand off the layout to the home page
-      setTimeout(onComplete, 800); 
-    }, 1000);
+      setTimeout(onComplete, 2000); // Allow time for the letters to "suit up"
+    }, 1200);
 
     return () => clearTimeout(revealTimer);
   }, [onComplete]);
 
   const brandOrange = "#FE5102";
+  const name = "ATHARAV NARANG";
+
+  // Animation variants for the "Iron Man" suit-up feel
+  const charTransition = (i: number) => ({
+    duration: 1.4,
+    ease: [0.23, 1, 0.32, 1],
+    delay: 0.1 + (Math.abs(i - name.length / 2) * 0.05), // Stagger from center
+  });
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none">
-      {/* Background Dimmer */}
+    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden pointer-events-none">
+      {/* Background Mask */}
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: phase === 1 ? 1 : 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.8 }}
         className="absolute inset-0 bg-black z-0 pointer-events-auto"
       />
 
-      {/* Vertical Split Curtain (High-speed Slide Away) */}
+      {/* Horizontal Curtain Split (The "Boutique" Reveal) */}
       <motion.div
-        initial={{ y: "0%" }}
-        animate={{ y: phase === 2 ? "-100%" : "0%" }}
-        transition={{ duration: 0.8, ease: [0.85, 0, 0.15, 1], delay: 0.05 }}
-        className="absolute inset-x-0 top-0 h-1/2 bg-black z-10"
+        initial={{ x: "0%" }}
+        animate={{ x: phase === 2 ? "-100%" : "0%" }}
+        transition={{ duration: 1.2, ease: [0.8, 0, 0.1, 1], delay: 0.1 }}
+        className="absolute inset-y-0 left-0 w-1/2 bg-black z-10 pointer-events-auto border-r border-orange/5"
       />
       <motion.div
-        initial={{ y: "0%" }}
-        animate={{ y: phase === 2 ? "100%" : "0%" }}
-        transition={{ duration: 0.8, ease: [0.85, 0, 0.15, 1], delay: 0.05 }}
-        className="absolute inset-x-0 bottom-0 h-1/2 bg-black z-10"
+        initial={{ x: "0%" }}
+        animate={{ x: phase === 2 ? "100%" : "0%" }}
+        transition={{ duration: 1.2, ease: [0.8, 0, 0.1, 1], delay: 0.1 }}
+        className="absolute inset-y-0 right-0 w-1/2 bg-black z-10 pointer-events-auto border-l border-orange/5"
       />
 
-      {/* The Name (Intro State) */}
-      <div className="relative z-20 overflow-hidden px-10">
-        {phase === 1 && (
-          <motion.div
-            key="reveal-container"
-            initial={{ y: "100%" }}
-            animate={{ y: "0%" }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: "circOut" }}
-            className="flex gap-[3rem] items-baseline"
-          >
+      {/* The Individual Letters (Iron Man Suit Parts) */}
+      <div className="relative z-20 flex gap-0 px-10 overflow-hidden">
+        <motion.div
+          initial={{ y: "100%" }}
+          animate={{ y: "0%" }}
+          transition={{ duration: 1, ease: "circOut", delay: 0.3 }}
+          className="flex"
+        >
+          {name.split("").map((char, i) => (
             <motion.span
-              layoutId="brand-first"
+              key={i}
+              layoutId={`brand-char-${i}`}
+              transition={charTransition(i)}
+              initial={{ rotateX: 0 }}
+              animate={{ rotateX: phase === 2 ? 360 : 0 }}
               style={{ color: brandOrange }}
-              className="font-heading font-black text-[clamp(2.5rem,7vw,7rem)] leading-none tracking-tighter uppercase"
+              className="inline-block font-heading font-black text-[clamp(2.5rem,7vw,7rem)] leading-none tracking-tighter uppercase whitespace-pre"
             >
-              Atharav
+              {char}
             </motion.span>
-            <motion.span
-              layoutId="brand-last"
-              style={{ color: brandOrange }}
-              className="font-heading font-black text-[clamp(2.5rem,7vw,7rem)] leading-none tracking-tighter uppercase"
-            >
-              Narang
-            </motion.span>
-          </motion.div>
-        )}
+          ))}
+        </motion.div>
       </div>
     </div>
   );

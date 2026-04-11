@@ -17,18 +17,28 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto w-full">
         <div className="mb-14 flex flex-col items-start gap-4">
-          <motion.span
-            layoutId="brand-first"
-            className="font-pixel text-orange text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block"
-          >
-            ATHARAV
-          </motion.span>
-          <motion.span
-            layoutId="brand-last"
-            className="font-pixel text-orange text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block"
-          >
-            NARANG
-          </motion.span>
+          <div className="flex">
+            {"ATHARAV".split("").map((char, i) => (
+              <motion.span
+                key={i}
+                layoutId={`brand-char-${i}`}
+                className="font-pixel text-orange text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block"
+              >
+                {char}
+              </motion.span>
+            ))}
+          </div>
+          <div className="flex">
+            {"NARANG".split("").map((char, i) => (
+              <motion.span
+                key={i + 8}
+                layoutId={`brand-char-${i + 8}`}
+                className="font-pixel text-orange text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block"
+              >
+                {char}
+              </motion.span>
+            ))}
+          </div>
         </div>
 
         <motion.div
