@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Press_Start_2P } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,8 +18,6 @@ export const metadata: Metadata = {
   title: "Portfolio | Atharav Narang",
   description: "Designer & developer portfolio showcasing work, projects, and experience.",
 };
-
-import CustomCursor from "@/components/ui/CustomCursor";
 
 export default function RootLayout({
   children,

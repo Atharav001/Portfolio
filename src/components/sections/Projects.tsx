@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import TiltCard from "@/components/ui/TiltCard";
@@ -75,9 +76,11 @@ function ProjectImage({ project }: { project: Project }) {
       className="w-full aspect-[16/10] bg-[#2a2a2a] rounded-xl flex items-center justify-center overflow-hidden border border-vanilla/10"
     >
       {project.image ? (
-        <img
+        <Image
           src={project.image}
           alt={project.title}
+          width={800}
+          height={500}
           className="w-full h-full object-cover"
         />
       ) : (
