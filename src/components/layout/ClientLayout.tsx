@@ -10,8 +10,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   const [removeIntro, setRemoveIntro] = useState(false);
 
   useEffect(() => {
-    // Show the destination (Hero) even earlier to match the high-speed intro
-    const contentTimer = setTimeout(() => setShowContent(true), 800);
+    // Show the target (Hero) almost immediately so magnets/layoutIds are ready
+    const contentTimer = setTimeout(() => setShowContent(true), 200);
     return () => clearTimeout(contentTimer);
   }, []);
 
@@ -25,13 +25,14 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         )}
       </AnimatePresence>
       
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: showContent ? 1 : 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        {children}
-      </motion.div>
+      <main>
+        <motion.div
+          animate={{ opacity: showContent ? 1 : 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {children}
+        </motion.div>
+      </main>
     </>
   );
 }
