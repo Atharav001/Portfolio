@@ -17,15 +17,8 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto w-full">
         <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 50,
-            damping: 20,
-            delay: 0.2,
-          }}
-          className="font-pixel text-orange text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-wider mb-6"
+          layoutId="brand-name"
+          className="font-pixel text-orange text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-wider mb-6 uppercase"
         >
           <span className="glitch-hover inline-block" data-text="ATHARAV">ATHARAV</span>
           <br />

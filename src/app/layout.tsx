@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Press_Start_2P } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/ui/CustomCursor";
+import { GoogleAnalytics } from '@next/third-parties/google';
+import ClientLayout from "@/components/layout/ClientLayout";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,8 +29,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${pressStart.variable} antialiased relative`}>
         <div className="bg-pulse-container" />
-        <CustomCursor />
-        {children}
+        <ClientLayout>
+          {children}
+        </ClientLayout>
+        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
       </body>
     </html>
   );
