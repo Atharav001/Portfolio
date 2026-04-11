@@ -22,7 +22,7 @@ export default function Hero() {
               <span
                 key={i}
                 style={{ color: "#FF5F00", opacity: 0 }}
-                className={`hero-char-${i} font-pixel text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block`}
+                className={`hero-char-${i} font-heading font-black text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block`}
               >
                 {char}
               </span>
@@ -33,7 +33,7 @@ export default function Hero() {
               <span
                 key={i + 8}
                 style={{ color: "#FF5F00", opacity: 0 }}
-                className={`hero-char-${i + 8} font-pixel text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block`}
+                className={`hero-char-${i + 8} font-heading font-black text-[clamp(2.5rem,8vw,8rem)] leading-[0.85] tracking-tight uppercase block`}
               >
                 {char}
               </span>

@@ -35,23 +35,18 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
           gsap.to(char, {
             x: deltaX,
             y: deltaY,
-            rotationX: 360,
-            duration: 1,
-            ease: "back.out(1.7)",
+            duration: 0.8,
+            ease: "power3.inOut",
             delay: delay,
             onComplete: () => {
-              // The "State Change" - switch to Pixel Font visually
-              char.classList.add("font-pixel", "tracking-tight");
-              char.classList.remove("font-heading", "tracking-tighter");
-              
               // To make it seamless, we reveal the real Hero letter and hide the flying one
               targetEl.style.opacity = "1";
               char.style.opacity = "0";
 
-              // Impact Spark
+              // Metallic Flash Spark
               gsap.fromTo(targetEl, 
-                { textShadow: "0 0 40px #FF5F00, 0 0 20px #FF5F00", scale: 1.2 }, 
-                { textShadow: "0 0 0px #FF5F00, 0 0 0px #FF5F00", scale: 1, duration: 0.6, ease: "power2.out" }
+                { color: "#FFFFFF", scale: 1.05 }, 
+                { color: "#FF5F00", scale: 1, duration: 0.3, ease: "power2.out" }
               );
 
               // If it's the last character to finish, call onComplete
