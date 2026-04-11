@@ -10,7 +10,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   const [removeIntro, setRemoveIntro] = useState(false);
 
   useEffect(() => {
-    // Reveal the main site at the exact moment parts start flying
+    // Show the destination (Hero) just as the intro is about to hand off the layout
     const contentTimer = setTimeout(() => setShowContent(true), 1300);
     return () => clearTimeout(contentTimer);
   }, []);
@@ -19,7 +19,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     <>
       <CustomCursor />
       
-      <AnimatePresence mode="popLayout">
+      <AnimatePresence>
         {!removeIntro && (
           <CinematicIntro key="intro" onComplete={() => setRemoveIntro(true)} />
         )}
