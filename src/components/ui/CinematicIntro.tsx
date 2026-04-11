@@ -80,23 +80,25 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
         initial={{ x: "0%" }}
         animate={{ x: phase >= 2 ? "-100%" : "0%" }}
         transition={{ duration: 1.2, ease: "expo.inOut" }}
-        className="absolute inset-y-0 left-0 w-1/2 bg-black z-10 border-r border-[#FF5F00]/20"
+        className="absolute inset-y-0 left-0 w-1/2 bg-black z-10"
       />
       <motion.div
         initial={{ x: "0%" }}
         animate={{ x: phase >= 2 ? "100%" : "0%" }}
         transition={{ duration: 1.2, ease: "expo.inOut" }}
-        className="absolute inset-y-0 right-0 w-1/2 bg-black z-10 border-l border-[#FF5F00]/20"
+        className="absolute inset-y-0 right-0 w-1/2 bg-black z-10"
       />
 
       {/* Flying Letters Container */}
-      <div className="relative z-[150] overflow-visible px-12 h-[12rem] flex items-center justify-center">
+      <div 
+        className={`relative z-[150] px-12 h-[12rem] flex items-center justify-center transition-all duration-300 ${phase === 1 ? 'overflow-hidden' : 'overflow-visible'}`}
+      >
         {phase <= 2 && (
           <motion.div
-            className="flex items-center justify-center"
-            initial={{ y: "150%" }}
+            className="flex items-center justify-center pt-8"
+            initial={{ y: "100%" }}
             animate={{ y: "0%" }}
-            transition={{ duration: 1, ease: [0.77, 0, 0.175, 1], delay: 0.3 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             {name.split("").map((char, i) => (
               <span
