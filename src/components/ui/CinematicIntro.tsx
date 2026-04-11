@@ -51,7 +51,7 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
           initial={{ y: "110%" }}
           animate={{ y: "0%" }}
           transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1], delay: 0.6 }}
-          className="flex gap-[0.8em]"
+          className="flex gap-[1.5em]"
         >
           <motion.span
             layoutId="brand-first"
@@ -70,14 +70,6 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
             Narang
           </motion.span>
         </motion.div>
-        
-        {/* Horizontal Line Reveal Mask (The "Center Line") */}
-        <motion.div 
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: phase === 1 ? 1 : 0 }}
-          transition={{ duration: 0.8, ease: "circInOut", delay: 0.3 }}
-          className="absolute bottom-0 left-0 w-full h-[2px] bg-orange/40 z-30"
-        />
       </div>
     </motion.div>
   );
