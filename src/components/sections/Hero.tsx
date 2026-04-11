@@ -45,7 +45,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4"
+          className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4"
         >
           <p className="font-pixel text-vanilla text-[clamp(0.7rem,2vw,1.6rem)] leading-normal">
             {"Let's talk about"}

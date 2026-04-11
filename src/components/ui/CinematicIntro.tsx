@@ -48,6 +48,12 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
               targetEl.style.opacity = "1";
               char.style.opacity = "0";
 
+              // Impact Spark
+              gsap.fromTo(targetEl, 
+                { textShadow: "0 0 40px #FF5F00, 0 0 20px #FF5F00", scale: 1.2 }, 
+                { textShadow: "0 0 0px #FF5F00, 0 0 0px #FF5F00", scale: 1, duration: 0.6, ease: "power2.out" }
+              );
+
               // If it's the last character to finish, call onComplete
               if (i === chars.length - 1 || i === 0) {
                 // Buffer to assure all animations wrap up and curtains slide away
