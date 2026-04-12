@@ -8,22 +8,19 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
 
-  const cursorX = useMotionValue(-100);
-  const cursorY = useMotionValue(-100);
+  const mouseX = useMotionValue(-100);
+  const mouseY = useMotionValue(-100);
+
+  // Ultra-responsive high-stiffness movement
+  const springConfig = { damping: 50, stiffness: 800, mass: 0.5 };
+  const cursorX = useSpring(mouseX, springConfig);
+  const cursorY = useSpring(mouseY, springConfig);
+  
   const [zoomScale, setZoomScale] = useState(1);
 
   useEffect(() => {
     const updateZoom = () => {
       // Detect browser zoom level (rough estimation)
-      // On most browsers, px units scale with zoom, so we inverse scale to keep physical size
-      const dpr = window.devicePixelRatio || 1;
-      // We assume the initial DPR is the 'normal' size. 
-      // This is hit-or-miss but a standard approach for persistent physical size.
-      setZoomScale(1 / (dpr / (window.devicePixelRatio || 1))); // This is a bit circular
-      
-      // More robust: compare innerWidth to a fixed reference if possible
-      // For now, let's use a dynamic calculation
-      // A common trick for zoom level is:
       const zoom = Math.round(((window.outerWidth) / window.innerWidth) * 100) / 100;
       if (zoom > 0) setZoomScale(1 / zoom);
     };
@@ -38,8 +35,8 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
     if (!enabled) return;
 
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX - 6);
-      cursorY.set(e.clientY - 6);
+      mouseX.set(e.clientX - 6);
+      mouseY.set(e.clientY - 6);
       if (!isVisible) setIsVisible(true);
     };
 
@@ -60,21 +57,20 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
 
     window.addEventListener("mousemove", moveCursor);
     window.addEventListener("mouseover", handleMouseOver);
-    document.body.classList.add("custom-cursor-active");
+    document.documentElement.classList.add("custom-cursor-active");
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mouseover", handleMouseOver);
-      document.body.classList.remove("custom-cursor-active");
+      document.documentElement.classList.remove("custom-cursor-active");
     };
-  }, [enabled, cursorX, cursorY, isVisible]);
+  }, [enabled, mouseX, mouseY, isVisible]);
 
   if (!isMounted || !enabled) return null;
 
   return (
     <motion.div
       className="pixel-cursor"
-      transition={{ type: "spring", stiffness: 1000, damping: 50, mass: 0.1 }}
       style={{
         x: cursorX,
         y: cursorY,

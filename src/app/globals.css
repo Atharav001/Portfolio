@@ -65,6 +65,10 @@
 }
 
 /* Custom Cursor Utilities */
+/* Hide system cursor globally */
+html, 
+body, 
+.custom-cursor-active,
 .custom-cursor-active * {
   cursor: none !important;
 }
