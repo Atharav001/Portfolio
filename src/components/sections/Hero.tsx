@@ -45,55 +45,65 @@ export default function Hero() {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4"
+          className="flex flex-col gap-1"
         >
-          <p className="font-pixel text-vanilla text-[clamp(0.7rem,2vw,1.6rem)] leading-normal">
-            {"Let's talk about"}
-          </p>
-          <span className="font-pixel text-[clamp(0.7rem,2vw,1.6rem)]">
-            <Typewriter />
-          </span>
+          <h2 className="font-pixel text-orange text-[clamp(1rem,2.5vw,2rem)] leading-tight uppercase font-bold">
+            AI Engineer | Building Production LLM Systems
+          </h2>
+          <div className="flex flex-col gap-1 mt-4">
+             <p className="font-body text-vanilla/80 text-[clamp(1rem,1.5vw,1.25rem)] font-medium">
+               First-year CS @ MIT Bangalore
+             </p>
+             <p className="font-body text-vanilla/60 text-[clamp(1rem,1.5vw,1.1rem)]">
+               Specialized in RAG, Agents, Fine-Tuning
+             </p>
+          </div>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="font-body text-vanilla/60 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] mt-8 max-w-[600px]"
-        >
-          Designer & developer crafting digital experiences that are thoughtful, functional, and beautiful.
-        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex gap-4 mt-10"
+          className="flex flex-wrap gap-4 mt-12"
         >
           <motion.a
             href="#projects"
             whileHover={{ 
               scale: 1.05, 
               backgroundColor: "#FE5102",
-              boxShadow: "0 0 20px rgba(254, 81, 2, 0.4)"
+              boxShadow: "0 0 25px rgba(254, 81, 2, 0.5)"
             }}
             whileTap={{ scale: 0.95 }}
-            className="font-body font-medium text-[16px] bg-orange text-white px-6 py-3 rounded-full transition-all duration-300"
+            className="font-body font-medium text-[15px] bg-orange text-white px-8 py-3.5 rounded-full transition-all duration-300 flex items-center gap-2"
           >
             View Projects
           </motion.a>
           <motion.a
-            href="#contact"
+            href="https://github.com/Atharav001"
+            target="_blank"
             whileHover={{ 
               scale: 1.05, 
               borderColor: "#FE5102", 
               color: "#FE5102",
-              boxShadow: "0 0 20px rgba(254, 81, 2, 0.2)"
+              boxShadow: "0 0 25px rgba(254, 81, 2, 0.2)"
             }}
             whileTap={{ scale: 0.95 }}
-            className="font-body font-medium text-[16px] border border-vanilla/20 text-vanilla px-6 py-3 rounded-full transition-all duration-300"
+            className="font-body font-medium text-[15px] border border-vanilla/20 text-vanilla px-8 py-3.5 rounded-full transition-all duration-300"
           >
-            Get in Touch
+            GitHub
+          </motion.a>
+          <motion.a
+            href="#"
+            whileHover={{ 
+              scale: 1.05, 
+              borderColor: "#FE5102", 
+              color: "#FE5102",
+              boxShadow: "0 0 25px rgba(254, 81, 2, 0.2)"
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="font-body font-medium text-[15px] border border-vanilla/20 text-vanilla px-8 py-3.5 rounded-full transition-all duration-300"
+          >
+            Blog
           </motion.a>
         </motion.div>
       </div>

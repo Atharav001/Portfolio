@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 import TiltCard from "@/components/ui/TiltCard";
 
-const experiences = [
-  { title: "Industrial", description: "3D modeling & fabrication with hands-on prototyping" },
-  { title: "Automotive", description: "Vehicle UX and interface design for next-gen dashboards" },
-  { title: "Art", description: "Mixed media installations and generative visual art" },
-  { title: "Production", description: "End-to-end product manufacturing and quality systems" },
-  { title: "Construction", description: "Architectural visualization and spatial computing" },
+const domains = [
+  { title: "LLMs & Tuning", description: "Fine-tuning and optimizing large language models for specialized tasks" },
+  { title: "RAG Systems", description: "Architecting advanced retrieval pipelines with vector stores and semantic search" },
+  { title: "Agentic AI", description: "Developing multi-agent workflows and autonomous tool-using systems" },
+  { title: "Production AI", description: "Scaling inference and implementing robust monitoring for LLM systems" },
+  { title: "Data Stack", description: "Curating high-quality synthetic and real-world data for model training" },
 ];
 
 const containerVariants = {
@@ -58,7 +58,7 @@ export default function About() {
           transition={{ duration: 1, delay: 0.2 }}
           className="font-body text-vanilla/60 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] max-w-[700px] mb-20"
         >
-          A multidisciplinary designer with a passion for turning complex problems into simple, elegant solutions. Here are some of the domains I work across.
+          An AI Engineer dedicated to building robust, production-grade LLM systems. I specialize in bridging the gap between cutting-edge research and scalable real-world implementations.
         </motion.p>
 
         <motion.div
@@ -68,7 +68,7 @@ export default function About() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"
         >
-          {experiences.map((item) => (
+          {domains.map((item) => (
             <TiltCard key={item.title}>
               <motion.div
                 variants={itemVariants}

@@ -16,8 +16,8 @@ const pressStart = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Atharav Narang",
-  description: "Designer & developer portfolio showcasing work, projects, and experience.",
+  title: "Atharav Narang | AI Engineer",
+  description: "AI Engineer specializing in production LLM systems, RAG, and agentic workflows.",
 };
 
 export default function RootLayout({

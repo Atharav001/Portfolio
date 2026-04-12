@@ -7,13 +7,13 @@ export default function Typewriter() {
     <span className="text-orange inline-block min-w-[200px]">
       <TypeAnimation
         sequence={[
-          "Code",
+          "Agents",
           1500,
-          "Systems",
+          "LLMs",
           1500,
-          "Design",
+          "RAG Systems",
           1500,
-          "AI",
+          "Automation",
           1500,
         ]}
         wrapper="span"

@@ -5,24 +5,24 @@ import TiltCard from "@/components/ui/TiltCard";
 
 const phases = [
   {
-    title: "Discover",
-    description: "Research, user interviews, competitive analysis, and problem space exploration.",
-    items: ["User Research", "Stakeholder Interviews", "Market Analysis", "Problem Framing"],
+    title: "Analyze",
+    description: "Domain research, requirement gathering, and defining success metrics for the LLM system.",
+    items: ["Requirement Analysis", "Success Metrics", "Knowledge Mapping", "Domain Research"],
   },
   {
-    title: "Define",
-    description: "Synthesize findings into clear problem statements and opportunity areas.",
-    items: ["Insight Synthesis", "Journey Mapping", "Problem Statement", "Opportunity Areas"],
+    title: "Architect",
+    description: "Designing the RAG pipeline, agentic workflows, and choosing the optimal model stack.",
+    items: ["Pipeline Design", "Model Selection", "Vector Store Strategy", "Agent Frameworks"],
   },
   {
-    title: "Develop",
-    description: "Ideation, prototyping, and iterative design exploration.",
-    items: ["Ideation Workshops", "Wireframing", "Prototyping", "Design Systems"],
+    title: "Engine Build",
+    description: "System implementation, fine-tuning scripts, and retrieval logic development.",
+    items: ["RAG Implementation", "SFT / RLHF", "Tool Integration", "Agent Logic"],
   },
   {
-    title: "Deliver",
-    description: "Testing, refinement, and implementation of the final solution.",
-    items: ["Usability Testing", "Visual Design", "Dev Handoff", "Launch & Measure"],
+    title: "Evaluate",
+    description: "Robust testing, performance benchmarking, and scaling for production reliability.",
+    items: ["LLM-as-a-Judge", "Load Testing", "Observability", "Production Scaling"],
   },
 ];
 
@@ -63,7 +63,7 @@ export default function Process() {
         >
           <span className="font-pixel text-orange text-[12px]">03</span>
           <h2 className="font-heading text-[clamp(2rem,5vw,5rem)] font-bold text-vanilla leading-none tracking-[-2px]">
-            Design Process
+            Execution <span className="text-orange">Framework</span>
           </h2>
         </motion.div>
 
@@ -74,7 +74,7 @@ export default function Process() {
           transition={{ duration: 1, delay: 0.2 }}
           className="font-body text-vanilla/60 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] max-w-[700px] mb-16"
         >
-          A structured approach to solving complex problems through human-centered design.
+          A rigorous engineering approach to building scalable and reliable AI systems.
         </motion.p>
 
         <motion.div

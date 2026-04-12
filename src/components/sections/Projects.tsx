@@ -19,7 +19,7 @@ const projects: Project[] = [
   {
     number: "01",
     title: "Scroller's Dashboard",
-    category: "Android Dev / Digital Wellness",
+    category: "Android Dev / Production Systems",
     description:
       "A high-performance Android application designed to break mindful scrolling habits using real-time Accessibility Service tracking and glassmorphic intervention overlays.",
     tags: ["Kotlin", "Accessibility API", "Room DB", "UX Research"],
@@ -28,19 +28,19 @@ const projects: Project[] = [
   },
   {
     number: "02",
-    title: "Project Beta",
-    category: "UX Research",
+    title: "MediLink RAG",
+    category: "AI Engineering / Healthcare",
     description:
-      "An in-depth research initiative exploring how users interact with complex data visualization tools across enterprise environments.",
-    tags: ["User Research", "Data Viz", "Workshops"],
+      "A high-precision retrieval-augmented generation system for clinical guidelines, featuring semantic chunking and automated citation verification.",
+    tags: ["LlamaIndex", "Pinecone", "OpenAI", "Python"],
   },
   {
     number: "03",
-    title: "Project Gamma",
-    category: "Design System",
+    title: "AutoResearch Agent",
+    category: "Agentic Workflows",
     description:
-      "Building a scalable design system from the ground up to unify product experiences across 12 teams with 140+ components.",
-    tags: ["Systems Thinking", "Tokens", "Documentation"],
+      "A multi-agent system that automates the entire research process from query expansion to drafting comprehensive literature reviews with verified sources.",
+    tags: ["LangGraph", "Groq", "Research Automation"],
   },
 ];
 
@@ -115,7 +115,7 @@ export default function Projects() {
           transition={{ duration: 1, delay: 0.2 }}
           className="font-body text-vanilla/60 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] max-w-[700px] mb-16"
         >
-          A selection of recent work spanning product design, research, and systems thinking.
+          Engineering robust AI solutions that solve real-world problems through advanced LLM architectures and production-grade systems.
         </motion.p>
 
         <motion.div
