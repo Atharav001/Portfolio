@@ -13,10 +13,6 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
 
   const [isMobile, setIsMobile] = useState(false);
 
-  // Balanced smooth movement
-  const springConfig = { damping: 40, stiffness: 300, mass: 0.5 };
-  const cursorX = useSpring(mouseX, springConfig);
-  const cursorY = useSpring(mouseY, springConfig);
   
   const [zoomScale, setZoomScale] = useState(1);
 
@@ -82,8 +78,8 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
     <motion.div
       className="pixel-cursor"
       style={{
-        x: cursorX,
-        y: cursorY,
+        x: mouseX,
+        y: mouseY,
         opacity: isVisible ? 1 : 0,
         scale: (isHovering ? 1.5 : 1) * zoomScale,
         rotate: isHovering ? 45 : 0,
