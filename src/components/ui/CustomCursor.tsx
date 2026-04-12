@@ -13,8 +13,8 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
 
   const [isMobile, setIsMobile] = useState(false);
 
-  // Ultra-responsive high-stiffness movement - reduced for smoothness
-  const springConfig = { damping: 45, stiffness: 300, mass: 0.6 };
+  // Balanced smooth movement
+  const springConfig = { damping: 40, stiffness: 300, mass: 0.5 };
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
   
