@@ -11,8 +11,10 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
 
-  // Ultra-responsive high-stiffness movement
-  const springConfig = { damping: 50, stiffness: 800, mass: 0.5 };
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Ultra-responsive high-stiffness movement - reduced slightly for smoothness
+  const springConfig = { damping: 40, stiffness: 500, mass: 0.5 };
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
   
@@ -23,6 +25,9 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
       // Detect browser zoom level (rough estimation)
       const zoom = Math.round(((window.outerWidth) / window.innerWidth) * 100) / 100;
       if (zoom > 0) setZoomScale(1 / zoom);
+      
+      // Mobile check
+      setIsMobile(window.matchMedia("(max-width: 768px)").matches || 'ontouchstart' in window);
     };
 
     window.addEventListener("resize", updateZoom);
@@ -32,7 +37,12 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
 
   useEffect(() => {
     setIsMounted(true);
-    if (!enabled) return;
+    
+    // Initial mobile check
+    const mobileCheck = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    setIsMobile(mobileCheck);
+
+    if (!enabled || mobileCheck) return;
 
     const moveCursor = (e: MouseEvent) => {
       mouseX.set(e.clientX - 6);
@@ -66,7 +76,7 @@ export default function CustomCursor({ enabled = true }: { enabled?: boolean }) 
     };
   }, [enabled, mouseX, mouseY, isVisible]);
 
-  if (!isMounted || !enabled) return null;
+  if (!isMounted || !enabled || isMobile) return null;
 
   return (
     <motion.div

@@ -92,19 +92,6 @@ export default function Hero() {
           >
             GitHub
           </motion.a>
-          <motion.a
-            href="#"
-            whileHover={{ 
-              scale: 1.05, 
-              borderColor: "#FE5102", 
-              color: "#FE5102",
-              boxShadow: "0 0 25px rgba(254, 81, 2, 0.2)"
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="font-body font-medium text-[15px] border border-vanilla/20 text-vanilla px-8 py-3.5 rounded-full transition-all duration-300"
-          >
-            Blog
-          </motion.a>
         </motion.div>
       </div>
 

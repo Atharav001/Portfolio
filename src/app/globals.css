@@ -65,12 +65,14 @@
 }
 
 /* Custom Cursor Utilities */
-/* Hide system cursor globally */
-html, 
-body, 
-.custom-cursor-active,
-.custom-cursor-active * {
-  cursor: none !important;
+/* Hide system cursor only on devices that have a cursor (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  html, 
+  body, 
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
 }
 
 .pixel-cursor {
@@ -86,6 +88,13 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Hide custom cursor on mobile/touch devices */
+@media (hover: none), (pointer: coarse) {
+  .pixel-cursor {
+    display: none !important;
+  }
 }
 
 .pixel-cursor-dot {
