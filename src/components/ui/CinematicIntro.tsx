@@ -8,67 +8,6 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
   const [phase, setPhase] = useState(1);
 
   useEffect(() => {
-    const createDustEffect = (x: number, y: number) => {
-      const container = document.body;
-      
-      // 1. Sharp Impact Shockwave
-      const shock = document.createElement("div");
-      shock.className = "shockwave";
-      shock.style.left = `${x}px`;
-      shock.style.top = `${y}px`;
-      shock.style.width = "40px";
-      shock.style.height = "40px";
-      container.appendChild(shock);
-      setTimeout(() => shock.remove(), 400);
-
-      // 2. High-Density Fine Powder (Primary Effect)
-      // Increased count for a "thick powder" feel
-      for (let i = 0; i < 20; i++) {
-        const powder = document.createElement("div");
-        powder.className = "powder-particle";
-        // Vary sizes slightly but keep them tiny
-        const size = 1 + Math.random() * 2;
-        powder.style.width = `${size}px`;
-        powder.style.height = `${size}px`;
-        powder.style.left = `${x}px`;
-        powder.style.top = `${y}px`;
-        
-        const angle = Math.random() * Math.PI * 2;
-        const distance = 30 + Math.random() * 70;
-        
-        powder.style.setProperty("--tw-translateX", `${-50 + (Math.cos(angle) * distance)}%`);
-        powder.style.setProperty("--tw-translateY", `${-50 + (Math.sin(angle) * distance)}%`);
-        // Longer duration for powder to "settle"
-        powder.style.setProperty("--powder-duration", `${0.8 + Math.random() * 0.8}s`);
-        
-        container.appendChild(powder);
-        setTimeout(() => powder.remove(), 1600);
-      }
-
-      // 3. Minimal Smoke/Dust (Reduced significantly)
-      for (let i = 0; i < 2; i++) {
-        const smoke = document.createElement("div");
-        smoke.className = "smoke-particle";
-        const size = 15 + Math.random() * 25;
-        smoke.style.width = `${size}px`;
-        smoke.style.height = `${size}px`;
-        smoke.style.left = `${x}px`;
-        smoke.style.top = `${y}px`;
-        
-        const angle = (Math.random() * Math.PI) + Math.PI;
-        const distance = 15 + Math.random() * 30;
-        
-        smoke.style.setProperty("--tw-translateX", `${-50 + (Math.cos(angle) * distance)}%`);
-        smoke.style.setProperty("--tw-translateY", `${-80 + (Math.sin(angle) * (distance / 2))}%`);
-        smoke.style.setProperty("--smoke-duration", `${0.6 + Math.random() * 0.6}s`);
-        smoke.style.setProperty("--smoke-scale", `${2 + Math.random() * 1.5}`);
-        smoke.style.setProperty("--smoke-rotate", `${(Math.random() - 0.5) * 90}deg`);
-        
-        container.appendChild(smoke);
-        setTimeout(() => smoke.remove(), 1500);
-      }
-    };
-
     // Once the name reveals, trigger the GSAP Iron Man flight
     const flightTimer = setTimeout(() => {
       setPhase(2);
@@ -100,9 +39,6 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
             ease: "power3.inOut",
             delay: delay,
             onComplete: () => {
-              // Trigger dust effect at landing position (targetRect coordinates)
-              createDustEffect(targetRect.left + targetRect.width / 2, targetRect.top + targetRect.height / 2);
-
               // To make it seamless, we reveal the real Hero letter and hide the flying one
               targetEl.style.opacity = "1";
               char.style.opacity = "0";
