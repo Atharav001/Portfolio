@@ -187,47 +187,81 @@ section {
 }
 
 /* Landing Dust/Smoke Effect */
-@keyframes smoke-drift {
+/* Realistic Landing Dust/Smoke Effect */
+@keyframes smoke-drift-advanced {
   0% {
-    transform: translate(-50%, -50%) scale(0.2);
+    transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
     opacity: 0;
+    filter: blur(2px);
   }
-  20% {
-    opacity: 0.4;
+  15% {
+    opacity: 0.5;
+    filter: blur(4px);
   }
   100% {
-    transform: translate(var(--tw-translateX), var(--tw-translateY)) scale(2.5);
+    transform: translate(var(--tw-translateX), var(--tw-translateY)) scale(var(--smoke-scale, 3)) rotate(var(--smoke-rotate, 90deg));
     opacity: 0;
+    filter: blur(12px);
   }
 }
 
 .smoke-particle {
   position: fixed;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 250, 238, 0.25) 0%, transparent 75%);
+  background: radial-gradient(circle at center, 
+    rgba(255, 250, 238, 0.2) 0%, 
+    rgba(255, 250, 238, 0.1) 40%, 
+    transparent 70%
+  );
   border-radius: 50%;
   z-index: 200;
-  filter: blur(4px);
-  animation: smoke-drift var(--smoke-duration, 1s) ease-out forwards;
+  animation: smoke-drift-advanced var(--smoke-duration, 1.2s) cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
-@keyframes dust-spark {
+@keyframes shockwave-anim {
   0% {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0.8;
+    border-width: 4px;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+    border-width: 0px;
+  }
+}
+
+.shockwave {
+  position: fixed;
+  pointer-events: none;
+  border: 1px solid rgba(255, 250, 238, 0.3);
+  border-radius: 50%;
+  z-index: 199;
+  animation: shockwave-anim 0.5s ease-out forwards;
+}
+
+@keyframes debris-fly {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
     opacity: 1;
   }
   100% {
-    transform: translate(var(--tw-translateX), var(--tw-translateY)) scale(0);
+    transform: translate(var(--tw-translateX), var(--tw-translateY)) scale(0.2) rotate(360deg);
     opacity: 0;
   }
 }
 
-.dust-sparkle {
+.debris {
   position: fixed;
   pointer-events: none;
   background: #FFFAEE;
-  width: 2px;
-  height: 2px;
+  width: 3px;
+  height: 3px;
   z-index: 201;
-  animation: dust-spark var(--dust-duration, 0.6s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangles/bits */
+  animation: debris-fly var(--debris-duration, 0.8s) cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.debris:nth-child(even) {
+  clip-path: rect(0% 0% 100% 100%);
 }
