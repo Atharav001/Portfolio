@@ -8,6 +8,47 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
   const [phase, setPhase] = useState(1);
 
   useEffect(() => {
+    const createDustEffect = (x: number, y: number) => {
+      const container = document.body;
+      
+      // Create smoke puff
+      for (let i = 0; i < 3; i++) {
+        const smoke = document.createElement("div");
+        smoke.className = "smoke-particle";
+        const size = 30 + Math.random() * 30;
+        smoke.style.width = `${size}px`;
+        smoke.style.height = `${size}px`;
+        smoke.style.left = `${x}px`;
+        smoke.style.top = `${y}px`;
+        
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 15 + Math.random() * 30;
+        smoke.style.setProperty("--tw-translateX", `${-50 + (Math.cos(angle) * distance)}%`);
+        smoke.style.setProperty("--tw-translateY", `${-50 + (Math.sin(angle) * distance)}%`);
+        smoke.style.setProperty("--smoke-duration", `${0.6 + Math.random() * 0.5}s`);
+        
+        container.appendChild(smoke);
+        setTimeout(() => smoke.remove(), 1200);
+      }
+
+      // Create some sparks/dust bits
+      for (let i = 0; i < 4; i++) {
+        const spark = document.createElement("div");
+        spark.className = "dust-sparkle";
+        spark.style.left = `${x}px`;
+        spark.style.top = `${y}px`;
+        
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 30 + Math.random() * 40;
+        spark.style.setProperty("--tw-translateX", `${-50 + (Math.cos(angle) * distance)}%`);
+        spark.style.setProperty("--tw-translateY", `${-50 + (Math.sin(angle) * distance)}%`);
+        spark.style.setProperty("--dust-duration", `${0.4 + Math.random() * 0.3}s`);
+        
+        container.appendChild(spark);
+        setTimeout(() => spark.remove(), 800);
+      }
+    };
+
     // Once the name reveals, trigger the GSAP Iron Man flight
     const flightTimer = setTimeout(() => {
       setPhase(2);
@@ -39,6 +80,9 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
             ease: "power3.inOut",
             delay: delay,
             onComplete: () => {
+              // Trigger dust effect at landing position (targetRect coordinates)
+              createDustEffect(targetRect.left + targetRect.width / 2, targetRect.top + targetRect.height / 2);
+
               // To make it seamless, we reveal the real Hero letter and hide the flying one
               targetEl.style.opacity = "1";
               char.style.opacity = "0";

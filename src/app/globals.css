@@ -185,3 +185,49 @@ section {
     transform: translate(0);
   }
 }
+
+/* Landing Dust/Smoke Effect */
+@keyframes smoke-drift {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(var(--tw-translateX), var(--tw-translateY)) scale(2.5);
+    opacity: 0;
+  }
+}
+
+.smoke-particle {
+  position: fixed;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 250, 238, 0.25) 0%, transparent 75%);
+  border-radius: 50%;
+  z-index: 200;
+  filter: blur(4px);
+  animation: smoke-drift var(--smoke-duration, 1s) ease-out forwards;
+}
+
+@keyframes dust-spark {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tw-translateX), var(--tw-translateY)) scale(0);
+    opacity: 0;
+  }
+}
+
+.dust-sparkle {
+  position: fixed;
+  pointer-events: none;
+  background: #FFFAEE;
+  width: 2px;
+  height: 2px;
+  z-index: 201;
+  animation: dust-spark var(--dust-duration, 0.6s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
