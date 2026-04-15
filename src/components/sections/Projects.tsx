@@ -23,7 +23,7 @@ const projects: Project[] = [
     description:
       "A high-performance Android application designed to break mindful scrolling habits using real-time Accessibility Service tracking and glassmorphic intervention overlays.",
     tags: ["Kotlin", "Accessibility API", "Room DB", "UX Research"],
-    image: "/projects/scrollers-dashboard.png",
+    image: "/projects/scrollers-dashboard-v2.png",
     link: "https://github.com/Atharav001/shortform-usage-sentinel",
   },
   {
