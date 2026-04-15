@@ -8,24 +8,30 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 overflow-hidden">
       <div className="relative z-10 max-w-[1400px] mx-auto w-full">
-        <div className="mb-14 flex flex-col items-start gap-4">
+        <div className="mb-14 flex flex-row flex-wrap items-start gap-x-[0.5rem] md:gap-x-[1rem] gap-y-2">
+          {/* First Name */}
           <div className="flex">
             {"ATHARAV".split("").map((char, i) => (
               <span
                 key={i}
                 style={{ color: "#FF5F00", opacity: 0 }}
-                className={`hero-char-${i} font-pixel text-[clamp(2rem,6vw,6rem)] leading-[0.85] tracking-tight uppercase block`}
+                className={`hero-char-${i} font-pixel text-[clamp(1.75rem,6vw,6rem)] leading-[0.85] tracking-tight uppercase block`}
               >
                 {char}
               </span>
             ))}
           </div>
+          
+          {/* Space Placeholder for Index 7 */}
+          <div className="hero-char-7 w-0 h-0 opacity-0 pointer-events-none" />
+
+          {/* Last Name */}
           <div className="flex">
             {"NARANG".split("").map((char, i) => (
               <span
                 key={i + 8}
                 style={{ color: "#FF5F00", opacity: 0 }}
-                className={`hero-char-${i + 8} font-pixel text-[clamp(2rem,6vw,6rem)] leading-[0.85] tracking-tight uppercase block`}
+                className={`hero-char-${i + 8} font-pixel text-[clamp(1.75rem,6vw,6rem)] leading-[0.85] tracking-tight uppercase block`}
               >
                 {char}
               </span>

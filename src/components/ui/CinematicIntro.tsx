@@ -89,22 +89,41 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
         className={`relative z-[150] px-12 h-[12rem] flex items-center justify-center ${phase === 1 ? 'overflow-hidden' : 'overflow-visible'}`}
       >
         {phase <= 2 && (
-          <motion.div
-            className="flex items-center justify-center pt-8"
-            initial={{ y: "100%" }}
-            animate={{ y: "0%" }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          >
-            {name.split("").map((char, i) => (
-              <span
-                key={i}
-                style={{ color: brandOrange, display: "inline-block" }}
-                className={`intro-char font-pixel text-[clamp(2rem,5vw,5rem)] leading-none tracking-tighter uppercase ${char === " " ? "w-[4rem]" : ""}`}
-              >
-                {char}
-              </span>
-            ))}
-          </motion.div>
+            <motion.div
+              className="flex flex-row flex-wrap justify-center items-center gap-x-[0.5rem] md:gap-x-[1rem] gap-y-2 pt-8"
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            >
+              {/* First Name Part */}
+              <div className="flex">
+                {name.slice(0, 7).split("").map((char, i) => (
+                  <span
+                    key={i}
+                    style={{ color: brandOrange, display: "inline-block" }}
+                    className="intro-char font-pixel text-[clamp(1.75rem,5vw,5rem)] leading-none tracking-tighter uppercase"
+                  >
+                    {char}
+                  </span>
+                ))}
+              </div>
+
+              {/* Space at Index 7 */}
+              <span className="intro-char w-0 h-0 opacity-0 pointer-events-none" />
+
+              {/* Last Name Part */}
+              <div className="flex">
+                {name.slice(8).split("").map((char, i) => (
+                  <span
+                    key={i + 8}
+                    style={{ color: brandOrange, display: "inline-block" }}
+                    className="intro-char font-pixel text-[clamp(1.75rem,5vw,5rem)] leading-none tracking-tighter uppercase"
+                  >
+                    {char}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
         )}
       </div>
     </div>
