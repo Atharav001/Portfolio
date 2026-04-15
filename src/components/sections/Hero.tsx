@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 overflow-hidden">
       <div className="relative z-10 max-w-[1400px] mx-auto w-full">
-        <div className="mb-14 flex flex-row flex-wrap items-start gap-x-[0.5rem] md:gap-x-[1rem] gap-y-2">
+        <div className="mb-14 flex flex-col items-start gap-2 md:gap-4">
           {/* First Name */}
           <div className="flex">
             {"ATHARAV".split("").map((char, i) => (
@@ -22,7 +22,7 @@ export default function Hero() {
             ))}
           </div>
           
-          {/* Space Placeholder for Index 7 */}
+          {/* Space Placeholder for Index 7 (Maintains animation alignment) */}
           <div className="hero-char-7 w-0 h-0 opacity-0 pointer-events-none" />
 
           {/* Last Name */}
