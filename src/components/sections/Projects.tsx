@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "Scroller's Dashboard",
     category: "Android Dev / Production Systems",
     description:
-      "A high-performance Android application designed to break mindful scrolling habits using real-time Accessibility Service tracking and glassmorphic intervention overlays.",
+      "Digital addiction is built on passive consumption. Scroller’s Dashboard disrupts this loop by tracking physical scroll events—not just time—and deploying real-time glassmorphic interventions to force intentionality.",
     tags: ["Kotlin", "Accessibility API", "Room DB", "UX Research"],
     image: "/projects/scrollers-dashboard-v2.png",
     link: "https://github.com/Atharav001/shortform-usage-sentinel",
