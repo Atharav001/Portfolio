@@ -99,7 +99,7 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
               <span
                 key={i}
                 style={{ color: brandOrange, display: "inline-block" }}
-                className={`intro-char font-heading font-black text-[clamp(2.5rem,7vw,7rem)] leading-none tracking-tighter uppercase ${char === " " ? "w-[4rem]" : ""}`}
+                className={`intro-char font-pixel text-[clamp(2rem,5vw,5rem)] leading-none tracking-tighter uppercase ${char === " " ? "w-[4rem]" : ""}`}
               >
                 {char}
               </span>
