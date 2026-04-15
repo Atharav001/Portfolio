@@ -56,7 +56,7 @@ export default function About() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="font-body text-vanilla/60 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] max-w-[700px] mb-20"
+          className="font-body text-vanilla/85 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] max-w-[700px] mb-20"
         >
           An AI Engineer dedicated to building robust, production-grade LLM systems. I specialize in bridging the gap between cutting-edge research and scalable real-world implementations.
         </motion.p>
@@ -90,7 +90,7 @@ export default function About() {
                   <h3 className="font-pixel text-vanilla text-[14px] mb-2 group-hover:text-orange transition-colors">
                     {item.title}
                   </h3>
-                  <p className="font-body text-vanilla/50 text-[15px] leading-[1.5]">
+                  <p className="font-body text-vanilla/80 text-[15px] leading-[1.5]">
                     {item.description}
                   </p>
                 </div>

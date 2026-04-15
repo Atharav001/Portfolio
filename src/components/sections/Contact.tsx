@@ -53,7 +53,7 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="font-body text-vanilla/60 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] max-w-[500px] mx-auto mb-16"
+          className="font-body text-vanilla/85 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] max-w-[500px] mx-auto mb-16"
         >
           Interested in working together? Have a question? Feel free to reach out through any of these channels.
         </motion.p>
@@ -98,7 +98,7 @@ export default function Contact() {
         className="max-w-[1400px] mx-auto mt-32 pt-8 border-t border-vanilla/5 flex flex-col sm:flex-row items-center justify-between gap-4"
       >
         <p className="font-pixel text-orange text-[9px] tracking-wider">ATHARAV NARANG</p>
-        <p className="font-body text-[13px] text-vanilla/30">
+        <p className="font-body text-[13px] text-vanilla/60">
           © {new Date().getFullYear()} All rights reserved.
         </p>
       </motion.div>

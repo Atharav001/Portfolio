@@ -43,12 +43,6 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
               targetEl.style.opacity = "1";
               char.style.opacity = "0";
 
-              // Refined Spark Effect (Peripheral Bloom)
-              gsap.fromTo(targetEl, 
-                { textShadow: "0 0 20px rgba(255,255,255,1), 0 0 10px rgba(255,255,255,0.8)", scale: 1.05 }, 
-                { textShadow: "0 0 0px rgba(255,255,255,0), 0 0 0px rgba(255,255,255,0)", scale: 1, duration: 0.4, ease: "power2.out" }
-              );
-
               // If it's the last character to finish, call onComplete
               if (i === chars.length - 1 || i === 0) {
                 // Buffer to assure all animations wrap up and curtains slide away

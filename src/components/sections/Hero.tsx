@@ -54,7 +54,7 @@ export default function Hero() {
              <p className="font-body text-vanilla/80 text-[clamp(1rem,1.5vw,1.25rem)] font-medium">
                First-year CS @ MIT Bangalore
              </p>
-             <p className="font-body text-vanilla/60 text-[clamp(1rem,1.5vw,1.1rem)]">
+             <p className="font-body text-vanilla/85 text-[clamp(1rem,1.5vw,1.1rem)]">
                Specialized in RAG, Agents, Fine-Tuning
              </p>
           </div>
@@ -101,7 +101,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
         href="#about"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-vanilla/30 hover:text-orange transition-colors animate-bounce"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-vanilla/60 hover:text-orange transition-colors animate-bounce"
       >
         <ArrowDown size={24} />
       </motion.a>

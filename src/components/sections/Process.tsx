@@ -72,7 +72,7 @@ export default function Process() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="font-body text-vanilla/60 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] max-w-[700px] mb-16"
+          className="font-body text-vanilla/85 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] max-w-[700px] mb-16"
         >
           A rigorous engineering approach to building scalable and reliable AI systems.
         </motion.p>
@@ -108,7 +108,7 @@ export default function Process() {
                     className="w-2 h-2 rounded-full bg-orange shadow-[0_0_10px_rgba(254,81,2,0.5)]"
                   />
                 </div>
-                <p className="font-body text-[15px] text-vanilla/50 leading-[1.5] mb-8">
+                <p className="font-body text-[15px] text-vanilla/80 leading-[1.5] mb-8">
                   {phase.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mt-auto">
@@ -116,7 +116,7 @@ export default function Process() {
                     <motion.span
                       key={item}
                       whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.1)" }}
-                      className="font-body text-[12px] text-vanilla/70 bg-vanilla/5 px-3 py-1.5 rounded-full cursor-default"
+                      className="font-body text-[12px] text-vanilla/90 bg-vanilla/5 px-3 py-1.5 rounded-full cursor-default"
                     >
                       {item}
                     </motion.span>

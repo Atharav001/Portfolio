@@ -41,7 +41,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * i, type: "spring", stiffness: 100 }}
               whileHover={{ y: -2, color: "#FE5102" }}
-              className="font-body text-[15px] text-vanilla/70 transition-colors"
+              className="font-body text-[15px] text-vanilla/90 transition-colors"
             >
               {link.label}
             </motion.a>
@@ -76,7 +76,7 @@ export default function Navbar() {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.05 * i }}
                 onClick={() => setMobileOpen(false)}
-                className="font-body text-[18px] text-vanilla/70 hover:text-orange transition-colors"
+                className="font-body text-[18px] text-vanilla/90 hover:text-orange transition-colors"
               >
                 {link.label}
               </motion.a>

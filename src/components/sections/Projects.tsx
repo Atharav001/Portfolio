@@ -113,7 +113,7 @@ export default function Projects() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="font-body text-vanilla/60 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] max-w-[700px] mb-16"
+          className="font-body text-vanilla/85 text-[clamp(1rem,1.5vw,1.25rem)] leading-[1.6] max-w-[700px] mb-16"
         >
           Engineering robust AI solutions that solve real-world problems through advanced LLM architectures and production-grade systems.
         </motion.p>
@@ -160,7 +160,7 @@ export default function Projects() {
                       </motion.div>
                     </div>
                     <p className="font-body text-[13px] text-muted mb-4">{project.category}</p>
-                    <p className="font-body text-[16px] text-vanilla/60 leading-[1.6] max-w-[550px]">
+                    <p className="font-body text-[16px] text-vanilla/85 leading-[1.6] max-w-[550px]">
                       {project.description}
                     </p>
                   </motion.div>
@@ -169,7 +169,7 @@ export default function Projects() {
                       <motion.span
                         key={tag}
                         whileHover={{ scale: 1.1, backgroundColor: "rgba(254, 81, 2, 0.1)" }}
-                        className="font-body text-[12px] text-vanilla/60 bg-vanilla/5 px-3 py-1.5 rounded-full cursor-default"
+                        className="font-body text-[12px] text-vanilla/90 bg-vanilla/5 px-3 py-1.5 rounded-full cursor-default"
                       >
                         {tag}
                       </motion.span>
