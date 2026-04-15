@@ -11,54 +11,58 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
     const createDustEffect = (x: number, y: number) => {
       const container = document.body;
       
-      // 1. Shockwave ring for instant impact feel
+      // 1. Sharp Shockwave
       const shock = document.createElement("div");
       shock.className = "shockwave";
       shock.style.left = `${x}px`;
       shock.style.top = `${y}px`;
-      shock.style.width = "40px";
-      shock.style.height = "40px";
+      shock.style.width = "50px";
+      shock.style.height = "50px";
       container.appendChild(shock);
-      setTimeout(() => shock.remove(), 600);
+      setTimeout(() => shock.remove(), 500);
 
-      // 2. Realistic Smoke Clouds
-      for (let i = 0; i < 4; i++) {
+      // 2. High-Density Powder Burst
+      for (let i = 0; i < 12; i++) {
+        const powder = document.createElement("div");
+        powder.className = "powder-particle";
+        const size = 1.5 + Math.random() * 2.5;
+        powder.style.width = `${size}px`;
+        powder.style.height = `${size}px`;
+        powder.style.left = `${x}px`;
+        powder.style.top = `${y}px`;
+        
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 40 + Math.random() * 80;
+        
+        powder.style.setProperty("--tw-translateX", `${-50 + (Math.cos(angle) * distance)}%`);
+        powder.style.setProperty("--tw-translateY", `${-50 + (Math.sin(angle) * distance)}%`);
+        powder.style.setProperty("--powder-duration", `${0.6 + Math.random() * 0.6}s`);
+        
+        container.appendChild(powder);
+        setTimeout(() => powder.remove(), 1200);
+      }
+
+      // 3. Dense Smoke Clouds
+      for (let i = 0; i < 5; i++) {
         const smoke = document.createElement("div");
         smoke.className = "smoke-particle";
-        const size = 20 + Math.random() * 40;
+        const size = 30 + Math.random() * 50;
         smoke.style.width = `${size}px`;
         smoke.style.height = `${size}px`;
         smoke.style.left = `${x}px`;
         smoke.style.top = `${y}px`;
         
-        const angle = (Math.random() * Math.PI) + Math.PI; // Upwards bias (mostly)
-        const distance = 20 + Math.random() * 40;
+        const angle = (Math.random() * Math.PI) + Math.PI;
+        const distance = 30 + Math.random() * 50;
         
         smoke.style.setProperty("--tw-translateX", `${-50 + (Math.cos(angle) * distance)}%`);
-        smoke.style.setProperty("--tw-translateY", `${-100 + (Math.sin(angle) * (distance / 2))}%`); // Flatten the Y
-        smoke.style.setProperty("--smoke-duration", `${1 + Math.random() * 0.8}s`);
-        smoke.style.setProperty("--smoke-scale", `${3 + Math.random() * 2}`);
+        smoke.style.setProperty("--tw-translateY", `${-100 + (Math.sin(angle) * (distance / 2))}%`);
+        smoke.style.setProperty("--smoke-duration", `${0.8 + Math.random() * 0.8}s`);
+        smoke.style.setProperty("--smoke-scale", `${4 + Math.random() * 2}`);
         smoke.style.setProperty("--smoke-rotate", `${(Math.random() - 0.5) * 180}deg`);
         
         container.appendChild(smoke);
-        setTimeout(() => smoke.remove(), 2000);
-      }
-
-      // 3. Sharp Debris/Dust Bits
-      for (let i = 0; i < 6; i++) {
-        const deb = document.createElement("div");
-        deb.className = "debris";
-        deb.style.left = `${x}px`;
-        deb.style.top = `${y}px`;
-        
-        const angle = Math.random() * Math.PI * 2;
-        const distance = 30 + Math.random() * 60;
-        deb.style.setProperty("--tw-translateX", `${-50 + (Math.cos(angle) * distance)}%`);
-        deb.style.setProperty("--tw-translateY", `${-50 + (Math.sin(angle) * distance)}%`);
-        deb.style.setProperty("--debris-duration", `${0.4 + Math.random() * 0.6}s`);
-        
-        container.appendChild(deb);
-        setTimeout(() => deb.remove(), 1000);
+        setTimeout(() => smoke.remove(), 1800);
       }
     };
 
