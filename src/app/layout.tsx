@@ -28,7 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${pressStart.variable} antialiased relative`}>
-        <div className="bg-pulse-container" />
         <ClientLayout>
           {children}
         </ClientLayout>

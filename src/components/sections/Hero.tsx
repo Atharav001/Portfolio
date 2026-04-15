@@ -7,14 +7,6 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 overflow-hidden">
-      {/* Texture */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.3 }}
-        transition={{ duration: 2 }}
-        className="absolute inset-0 texture-overlay pointer-events-none"
-      />
-
       <div className="relative z-10 max-w-[1400px] mx-auto w-full">
         <div className="mb-14 flex flex-col items-start gap-4">
           <div className="flex">

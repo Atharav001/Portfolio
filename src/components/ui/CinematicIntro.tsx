@@ -86,7 +86,7 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
 
       {/* Flying Letters Container */}
       <div 
-        className={`relative z-[150] px-12 h-[12rem] flex items-center justify-center transition-all duration-300 ${phase === 1 ? 'overflow-hidden' : 'overflow-visible'}`}
+        className={`relative z-[150] px-12 h-[12rem] flex items-center justify-center ${phase === 1 ? 'overflow-hidden' : 'overflow-visible'}`}
       >
         {phase <= 2 && (
           <motion.div

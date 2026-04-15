@@ -35,35 +35,6 @@
   animation: blink 0.8s step-end infinite;
 }
 
-/* Background Pulse */
-@keyframes bgPulse {
-  0% {
-    opacity: 0.15;
-  }
-
-  50% {
-    opacity: 0.25;
-  }
-
-  100% {
-    opacity: 0.15;
-  }
-}
-
-.bg-pulse-container {
-  position: fixed;
-  bottom: -30%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120%;
-  height: 80%;
-  pointer-events: none;
-  z-index: -1;
-  background: radial-gradient(circle at 50% 100%, var(--color-orange), transparent 75%);
-  filter: blur(120px);
-  animation: bgPulse 12s ease-in-out infinite;
-}
-
 /* Custom Cursor Utilities */
 /* Hide system cursor only on devices that have a cursor (desktop) */
 @media (hover: hover) and (pointer: fine) {
@@ -181,12 +152,6 @@ section {
     transform: translate(1px, -1px);
   }
 
-  100% {
-    transform: translate(0);
-  }
-}
-
-/* Landing Dust/Smoke Effect */
   100% {
     transform: translate(0);
   }
